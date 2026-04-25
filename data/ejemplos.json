@@ -1,0 +1,46 @@
+[
+  {
+    "id": "caso1",
+    "nombre": "Admisión y Becas Universitarias",
+    "descripcion": "Decidir si conviene desplegar un asistente con IA para prevalidar solicitudes y resumir expedientes sin perder equidad.",
+    "contexto": "La universidad recibe miles de solicitudes anuales. El equipo de admisiones está desbordado y los tiempos de respuesta se alargan, afectando la competitividad.",
+    "decision": "¿Debemos implementar un sistema de IA para automatizar la pre-evaluación de las solicitudes y la asignación preliminar de becas?",
+    "datos": "Volumen: 15,000 solicitudes/año. Expedientes incompletos: 30%. Sensibilidad del dato: Alta (datos socioeconómicos).",
+    "restricciones": "Plazo máximo de resolución: 4 semanas. Obligatoriedad de revisión humana en decisiones finales de becas.",
+    "metricas": "Tiempo medio actual por expediente: 45 min. Tasa de error manual actual: 5%.",
+    "riesgo": "Riesgo alto de sesgo algorítmico contra minorías o rentas bajas si no se audita el modelo."
+  },
+  {
+    "id": "caso2",
+    "nombre": "Tickets Internos de Soporte TI",
+    "descripcion": "Decidir si conviene automatizar la clasificación y el escalado inicial de tickets internos.",
+    "contexto": "El Helpdesk recibe una gran cantidad de incidencias diarias. Muchas son consultas rutinarias (restablecer contraseñas), pero se mezclan con caídas de servidores.",
+    "decision": "¿Es viable y seguro usar un agente IA para clasificar, responder tickets estándar y derivar incidentes críticos automáticamente?",
+    "datos": "Tickets al mes: 8,500. Tickets repetidos: 60%. Incidentes críticos reales: 2%.",
+    "restricciones": "SLA objetivo: Primera respuesta en < 15 min. Resolución de críticos en < 1 hora.",
+    "metricas": "Tiempo de primera respuesta actual: 4 horas. Coste por ticket nivel 1: 15€.",
+    "riesgo": "Peligro de clasificar erróneamente un incidente de ciberseguridad o caída crítica como ticket estándar de baja prioridad."
+  },
+  {
+    "id": "caso3",
+    "nombre": "Devoluciones y Fraude en E-commerce",
+    "descripcion": "Decidir si el negocio debe automatizar devoluciones estándar y reservar revisión humana para fraude.",
+    "contexto": "La tienda online ha crecido exponencialmente, al igual que las devoluciones. Se sospecha de un aumento en 'fraude amistoso' y abusos de la política de devoluciones.",
+    "decision": "¿Deberíamos aprobar automáticamente devoluciones de bajo importe y usar IA para flaggear casos sospechosos para revisión manual?",
+    "datos": "Devoluciones mensuales: 12,000. Porcentaje estimado de fraude: 8%. Valor medio del pedido: 65€.",
+    "restricciones": "Aprobación de pedidos > 200€ requiere revisión humana obligatoria. No penalizar a clientes VIP.",
+    "metricas": "Tiempo medio de resolución de devolución: 7 días. Coste operativo de revisión: 8€ por caso.",
+    "riesgo": "Aumentar la fricción en clientes honestos o, por el contrario, ser demasiado permisivos y sufrir pérdidas millonarias por fraude sistémico."
+  },
+  {
+    "id": "caso4",
+    "nombre": "Asistente Interno de Documentación Corporativa",
+    "descripcion": "Decidir qué arquitectura conviene para un asistente que consulta documentación interna sin disparar riesgos.",
+    "contexto": "Los empleados pierden mucho tiempo buscando información en manuales de producto, políticas de RRHH y documentación técnica dispersa.",
+    "decision": "¿Conviene adoptar una solución SaaS externa (tipo ChatGPT Enterprise) o desarrollar un RAG (Retrieval-Augmented Generation) privado con LLM open-source?",
+    "datos": "Usuarios activos: 3,500. Consultas/usuario: 10 al día. Sensibilidad documental: Extrema (secretos industriales).",
+    "restricciones": "Presupuesto mensual máximo: 15,000€. Latencia máxima tolerable: 3 segundos por respuesta.",
+    "metricas": "Horas perdidas en búsqueda de info: 4h/semana por empleado.",
+    "riesgo": "Fuga de información confidencial hacia modelos de terceros (data leakage) y riesgo de 'alucinaciones' en procedimientos operativos críticos."
+  }
+]

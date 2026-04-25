@@ -1,0 +1,277 @@
+:root {
+    --bg-main: #f0ebd8; /* pale beige */
+    --box-bg: #ffffff;
+    --text-main: #000000;
+    --primary: #f2ff49; /* bright yellow */
+    --primary-hover: #e0f035;
+    --accent: #ff499e; /* bold pink */
+    --accent-hover: #e63989;
+    --secondary: #49f2ff; /* cyan */
+    --border-color: #000000;
+    --border-width: 3px;
+    --shadow-offset: 6px;
+    --shadow-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* subtle dot pattern for extra retro vibe */
+    background-image: radial-gradient(#000000 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.app-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Core Neobrutalist Box */
+.brutal-box {
+    background: var(--box-bg);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0px; /* Sharp corners */
+    padding: 25px;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.header-box {
+    background: var(--secondary);
+    text-align: center;
+    padding: 30px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    font-size: 2.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    background-color: var(--primary);
+    padding: 0 10px;
+    border: 3px solid var(--border-color);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-scroll-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.brutal-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.brutal-input {
+    width: 100%;
+    background: #ffffff;
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 15px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    resize: vertical;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+    transition: all 0.2s ease;
+}
+
+.brutal-input:focus {
+    box-shadow: 5px 5px 0px var(--shadow-color);
+    background-color: #fafafa;
+}
+
+textarea.brutal-input {
+    min-height: 80px;
+}
+
+.help-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    min-height: 20px;
+    background: var(--primary);
+    padding: 5px 10px;
+    border: 2px solid var(--border-color);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.help-text:empty {
+    display: none;
+}
+
+/* Buttons */
+.brutal-btn {
+    border: var(--border-width) solid var(--border-color);
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+}
+
+.brutal-btn:active:not(:disabled) {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+.primary-btn {
+    background-color: var(--primary);
+    color: var(--text-main);
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.result-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--accent);
+    color: white;
+    padding: 5px 10px;
+    border: var(--border-width) solid var(--border-color);
+}
+
+.secondary-btn {
+    background-color: #ffffff;
+    color: var(--text-main);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background-color: #f0f0f0;
+}
+
+.secondary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.result-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#prompt-output {
+    flex-grow: 1;
+    min-height: 300px;
+    background: #ffffff;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.status-message {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    background-color: var(--accent);
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid var(--border-color);
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: inline-block;
+    float: right;
+}
+
+.status-message.show {
+    opacity: 1;
+}
+
+.footer-box {
+    text-align: center;
+    padding: 15px;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+}
+
+footer a:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}

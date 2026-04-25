@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Pilot IA</title>
+    <!-- Modern Typography: Space Grotesk for a techy neobrutalist vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="brutal-box header-box">
+            <div class="logo-area">
+                <span class="icon">⚡</span>
+                <h1>DECISION PILOT <span class="highlight">IA</span></h1>
+            </div>
+            <p class="subtitle">Estructura tus decisiones complejas antes de consultar a la Inteligencia Artificial.</p>
+        </header>
+
+        <main>
+            <section class="brutal-box left-panel">
+                <div class="form-group">
+                    <label for="case-selector" class="brutal-label">1. SELECCIONA UN CASO</label>
+                    <select id="case-selector" class="brutal-input">
+                        <option value="" disabled selected>-- Elige un escenario práctico --</option>
+                        <!-- Options will be populated via app.js -->
+                    </select>
+                    <p id="case-description" class="help-text"></p>
+                </div>
+
+                <div class="form-scroll-area">
+                    <div class="form-group">
+                        <label for="context" class="brutal-label">2. CONTEXTO INICIAL</label>
+                        <textarea id="context" class="brutal-input" rows="3" placeholder="Describe la situación actual..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="decision" class="brutal-label">3. DECISIÓN PRINCIPAL</label>
+                        <textarea id="decision" class="brutal-input" rows="2" placeholder="¿Qué necesitas decidir?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data" class="brutal-label">4. DATOS / MÉTRICAS</label>
+                        <textarea id="data" class="brutal-input" rows="2" placeholder="Volumen, porcentajes, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restrictions" class="brutal-label">5. RESTRICCIONES / RIESGOS</label>
+                        <textarea id="restrictions" class="brutal-input" rows="2" placeholder="Presupuesto, SLAs, riesgos de sesgo..."></textarea>
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="brutal-btn primary-btn">
+                    GENERAR PROMPT ESTRUCTURADO 🚀
+                </button>
+            </section>
+
+            <section class="brutal-box right-panel">
+                <div class="result-header">
+                    <h2>PROMPT GENERADO</h2>
+                    <button id="copy-btn" class="brutal-btn secondary-btn" disabled>
+                        COPIAR 📋
+                    </button>
+                </div>
+                
+                <div class="result-area">
+                    <textarea id="prompt-output" class="brutal-input" readonly placeholder="Aquí aparecerá el prompt estructurado listo para enviar a la IA..."></textarea>
+                </div>
+                
+                <div class="status-message" id="status-message"></div>
+            </section>
+        </main>
+
+        <footer class="brutal-box footer-box">
+            <p><strong>Laboratorio: Toma de Decisiones Razonadas con IA</strong></p>
+            <p class="credits">Proyecto creado para clase | <a href="#" target="_blank">Repositorio en GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="prompts.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
